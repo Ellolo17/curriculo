@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <link rel="stylesheet" href="style.css">
+    </header>
+    <body>
+        <div class="item menu">
+            <div class="menuItem">home</div>
+            <div class="menuItem">Abilities</div>
+            <div class="menuItem">working life</div>
+            <div class="menuItem">studies</div>
+            <div class="menuItem">Other things I´ve done</div>
+        </div>
+        <div class="content">
+            <div class="item home">
+                <h1>Luis Miguel Carrasco</h1>
+                <hr>
+                <div>Software Engineer in Germany</div>
+                <div>Born: 27.06.1986 - Valencia, Spain</div>
+                <div class="sendme"><b>SEND ME AN EMAIL</b></div>
+            </div>
+
+            <div class="item abilities">
+                <h2>Abilities</h2>
+                <hr>
+                <b>Langages:</b>
+                <ul>
+                    <li id="german">German - B2 (certificated, living in Germany since 2015)</li>
+                    <div id="germaninfo" class="divInfo">
+                        I live in Germany since 2015. In the first year here I focused on learning german until B2 and then search for a job
+                    </div>
+                    <li id="english">English - B2 (not certificated)</li>
+                    <div id="englishinfo" class="divInfo">
+                        This is not certified. But I have written this whole page, I use english in my normal day, I was using english while I was learning german, etc... Just try to speak to me in english
+                    </div>
+                    <li id="spanish">Spanish - Mother language</li>
+                    <div id="spanishinfo" class="divInfo">
+                        I was born in Spain. I lived there the first 28 years of my life.
+                    </div>
+                </ul>
+                <b>Programming languages:</b>
+                <ul>
+                    <li>Java</li>
+                    <li>Javascript, HTML, CSS, JQuery, React, Angular</li>
+                    <li>C</li>
+                    <li>C++</li>
+                    <li>C#</li>
+                    <li>Python</li>
+                    <li>PHP</li>
+                    <li>Databases: SQL, no-SQL (MongoDB), </li>
+                </ul>
+                <b>Frameworks:</b>
+                <ul>
+                    <li>Spring</li>
+                    <li>.Net</li>
+                    <li>C</li>
+                    <li>C++</li>
+                    <li>C#</li>
+                    <li>Python</li>
+                    <li>Databases: SQL, no-SQL (MongoDB), </li>
+                </ul>
+                <b>Tools:</b>
+                <ul>
+                    <li>Eclipse</li>
+                    <li>NetBeans</li>
+                    <li>Atom</li>
+                    <li>VSCode</li>
+                    <li>VS.net</li>
+                </ul>
+                <b>IT:</b>
+                <ul>
+                    <li>ITIL Foundations certificated on 2013</li>
+                    <li>Mounting LAMP servers with Wordpress</li>
+                    <li>Virtual Computers</li>
+                </ul>
+            </div>
+
+            <div class="item work">
+                <h2>Working life</h2>
+                <hr>
+                <ul>
+                    <li>2004 - QA internship @ Meta4 S.A.</li>
+                    <li>2004-2009 - Developer, IT and OfficeWorker @ Transportes Carrasco, S.A.</li>
+                    <li>2011 - Game Developer @ Cupra Studios, S.L.</li>
+                    <li>2011-2015 - Founder @ Duermes y me Olvidas, S.L.</li>
+                    
+                    <li>2016 - QA @ Schuchert Managementberatung GmbH & Co. KG</li>
+                    <li>2016-Today - Fullstack Developer @ Qtime GmbH</li>
+                </ul>
+            </div>
+    
+            <div class="item studies">
+                <h2>Studies</h2>
+                <hr>
+                <ul>
+                    <li>up to 2004 - High School @ Santa Maria del Pilar, Madrid</li>
+                    <li>2004-2006 - Certificate of Higher Education in Software Development</li>
+                    <li>2009-2014 - University Degree in Software Engineering</li>
+                </ul>
+            </div>
+
+            <div class="item other">
+                <h2>Other things I´ve done</h2>
+                <hr>
+                <ul>
+                    <li id="controllinglobe">Controlling globe</li>
+                    <div id="controllinglobeinfo" class="divInfo">In the university I did this prototype allowing the use of an hand as Byte input</div>
+                    <li id="mazerobot">Maze solving robot</li>
+                    <div id="mazerobotinfo" class="divInfo">In the university I did this project for the Science Week 2011</div>
+                    <li>3D chess</li>
+                    <li>White - Plattformer game</li>
+                    <li>Other small game projects/ Gamejams</li>
+                    <li>Martial Arts</li>
+                </ul>
+            </div>
+        </div>
+        <script>
+            //add the events to the LI:
+            var liItems = document.querySelectorAll("li");
+            for(var i = 0; i < liItems.length; i++){
+                addEventListenerToLI(liItems[i]);
+            }
+
+            function addEventListenerToLI(li){
+                if(li.id.length > 0) li.addEventListener("click", switchLI); 
+            }
+
+            function switchLI(event){
+                var clicked = event.target;
+                var infodiv = document.getElementById(clicked.id + "info");
+                if(infodiv.classList.contains("expanded")){
+                    infodiv.classList.remove("expanded");
+                }else{
+                    infodiv.classList.add("expanded");
+                }
+            }
+        </script>
+    </body>
+</html>
